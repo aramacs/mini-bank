@@ -14,15 +14,21 @@ repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
-run {
-    standardInput = System.in
-}
+// run {
+//     standardInput = System.in
+// }
 dependencies {
     // Use JUnit test framework.
     testImplementation libs.junit
 
     // This dependency is used by the application.
     implementation libs.guava
+    implementation fileTree(dir:'libs', include: ['*.jar'])
+    // implementation 'org.json:json:20240303'
+    // implementation org.json
+    //
+    // implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'org.json:json:20240303'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
